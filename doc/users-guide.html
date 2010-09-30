@@ -14,10 +14,11 @@
 
     <div align="left"><h1>Erubis Users' Guide</h1></div>
     <div align="left">
-      last update: $Date: 2008-06-13 08:04:21 +0900 (Fri, 13 Jun 2008) $<br>
+      release:     2.6.6<br>
+      last update: $Date$<br>
     </div>
 
-<p>release: 2.6.2
+<p>release: 2.6.6
 </p>
 <a name="preface"></a>
 <h2 class="section1">Preface</h2>
@@ -2986,8 +2987,8 @@ example of using NoCodeEnhancer with PHP file</div>
 <p>Thanks Andrew R Jackson, he developed 'erubis-run.rb' which enables you to use Erubis with mod_ruby.
 </p>
 <ol type="1">
-<li>Copy 'erubis-2.6.2/contrib/erubis-run.rb' to the 'RUBYLIBDIR/apache' directory (for example '/usr/local/lib/ruby/1.8/apache') which contains 'ruby-run.rb', 'eruby-run.rb', and so on.
-<pre class="terminal">$ cd erubis-2.6.2/
+<li>Copy 'erubis-2.6.6/contrib/erubis-run.rb' to the 'RUBYLIBDIR/apache' directory (for example '/usr/local/lib/ruby/1.8/apache') which contains 'ruby-run.rb', 'eruby-run.rb', and so on.
+<pre class="terminal">$ cd erubis-2.6.6/
 $ sudo copy contrib/erubis-run.rb /usr/local/lib/ruby/1.8/apache/
 </pre>
 </li>
@@ -3063,12 +3064,12 @@ p obj.render('world')          #=&gt; "hello world"
 
 <a name="topics-benchmark"></a>
 <h3 class="section2">Benchmark</h3>
-<p>A benchmark script is included in Erubis package at 'erubis-2.6.2/benchark/' directory.
+<p>A benchmark script is included in Erubis package at 'erubis-2.6.6/benchark/' directory.
 Here is an example result of benchmark.
 </p>
 <div class="terminal_caption">
 MacOS X 10.4 Tiger, Intel CoreDuo 1.83GHz, Ruby1.8.6, eruby1.0.5, gcc4.0.1</div>
-<pre class="terminal">$ cd erubis-2.6.2/benchmark/
+<pre class="terminal">$ cd erubis-2.6.6/benchmark/
 $ ruby bench.rb -n 10000 -m execute
 *** ntimes=10000, testmode=execute
                                     user     system      total        real

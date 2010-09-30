@@ -1,7 +1,6 @@
 ###
-### $Rev: 115 $
-### $Release: 2.6.2 $
-### copyright(c) 2006-2008 kuwata-lab.com all rights reserved.
+### $Release: 2.6.6 $
+### copyright(c) 2006-2010 kuwata-lab.com all rights reserved.
 ###
 
 require  "#{File.dirname(__FILE__)}/test.rb"

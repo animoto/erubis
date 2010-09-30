@@ -112,13 +112,13 @@ ex.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000216">[]</a>&nbsp;&nbsp;
-      <a href="#M000217">[]=</a>&nbsp;&nbsp;
-      <a href="#M000219">each</a>&nbsp;&nbsp;
-      <a href="#M000218">keys</a>&nbsp;&nbsp;
-      <a href="#M000215">new</a>&nbsp;&nbsp;
-      <a href="#M000220">to_hash</a>&nbsp;&nbsp;
-      <a href="#M000221">update</a>&nbsp;&nbsp;
+      <a href="#M000219">[]</a>&nbsp;&nbsp;
+      <a href="#M000220">[]=</a>&nbsp;&nbsp;
+      <a href="#M000222">each</a>&nbsp;&nbsp;
+      <a href="#M000221">keys</a>&nbsp;&nbsp;
+      <a href="#M000218">new</a>&nbsp;&nbsp;
+      <a href="#M000223">to_hash</a>&nbsp;&nbsp;
+      <a href="#M000224">update</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -147,21 +147,21 @@ ex.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000215" class="method-detail">
-        <a name="M000215"></a>
+      <div id="method-M000218" class="method-detail">
+        <a name="M000218"></a>
 
         <div class="method-heading">
-          <a href="#M000215" class="method-signature">
+          <a href="#M000218" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(hash=nil)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000215-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000215-source">
+            onclick="toggleCode('M000218-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000218-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/context.rb, line 34</span>
+<span class="ruby-comment cmt"># File erubis/context.rb, line 33</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">hash</span>=<span class="ruby-keyword kw">nil</span>)
       <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
         <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
@@ -174,58 +174,12 @@ ex.
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000216" class="method-detail">
-        <a name="M000216"></a>
-
-        <div class="method-heading">
-          <a href="#M000216" class="method-signature">
-          <span class="method-name">[]</span><span class="method-args">(key)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000216-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000216-source">
-<pre>
-<span class="ruby-comment cmt"># File erubis/context.rb, line 40</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
-      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000217" class="method-detail">
-        <a name="M000217"></a>
-
-        <div class="method-heading">
-          <a href="#M000217" class="method-signature">
-          <span class="method-name">[]=</span><span class="method-args">(key, value)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000217-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000217-source">
-<pre>
-<span class="ruby-comment cmt"># File erubis/context.rb, line 44</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
-      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-identifier">value</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
       <div id="method-M000219" class="method-detail">
         <a name="M000219"></a>
 
         <div class="method-heading">
           <a href="#M000219" class="method-signature">
-          <span class="method-name">each</span><span class="method-args">() {|key, value| ...}</span>
+          <span class="method-name">[]</span><span class="method-args">(key)</span>
           </a>
         </div>
       
@@ -234,7 +188,53 @@ ex.
             onclick="toggleCode('M000219-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000219-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/context.rb, line 52</span>
+<span class="ruby-comment cmt"># File erubis/context.rb, line 39</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000220" class="method-detail">
+        <a name="M000220"></a>
+
+        <div class="method-heading">
+          <a href="#M000220" class="method-signature">
+          <span class="method-name">[]=</span><span class="method-args">(key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000220-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000220-source">
+<pre>
+<span class="ruby-comment cmt"># File erubis/context.rb, line 43</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000222" class="method-detail">
+        <a name="M000222"></a>
+
+        <div class="method-heading">
+          <a href="#M000222" class="method-signature">
+          <span class="method-name">each</span><span class="method-args">() {|key, value| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000222-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000222-source">
+<pre>
+<span class="ruby-comment cmt"># File erubis/context.rb, line 51</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>
       <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
         <span class="ruby-identifier">key</span> = <span class="ruby-identifier">name</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
@@ -247,21 +247,21 @@ ex.
         </div>
       </div>
 
-      <div id="method-M000218" class="method-detail">
-        <a name="M000218"></a>
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
 
         <div class="method-heading">
-          <a href="#M000218" class="method-signature">
+          <a href="#M000221" class="method-signature">
           <span class="method-name">keys</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000218-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000218-source">
+            onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000221-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/context.rb, line 48</span>
+<span class="ruby-comment cmt"># File erubis/context.rb, line 47</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">keys</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-identifier">name</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] }
     <span class="ruby-keyword kw">end</span>
@@ -270,21 +270,21 @@ ex.
         </div>
       </div>
 
-      <div id="method-M000220" class="method-detail">
-        <a name="M000220"></a>
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
 
         <div class="method-heading">
-          <a href="#M000220" class="method-signature">
+          <a href="#M000223" class="method-signature">
           <span class="method-name">to_hash</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000220-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000220-source">
+            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000223-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/context.rb, line 60</span>
+<span class="ruby-comment cmt"># File erubis/context.rb, line 59</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>
       <span class="ruby-identifier">hash</span> = {}
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">key</span>] }
@@ -295,21 +295,21 @@ ex.
         </div>
       </div>
 
-      <div id="method-M000221" class="method-detail">
-        <a name="M000221"></a>
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
 
         <div class="method-heading">
-          <a href="#M000221" class="method-signature">
+          <a href="#M000224" class="method-signature">
           <span class="method-name">update</span><span class="method-args">(context_or_hash)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000221-source">
+            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000224-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/context.rb, line 66</span>
+<span class="ruby-comment cmt"># File erubis/context.rb, line 65</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">context_or_hash</span>)
       <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">context_or_hash</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)

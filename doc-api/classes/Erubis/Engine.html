@@ -93,11 +93,11 @@ converter module.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000207">convert!</a>&nbsp;&nbsp;
-      <a href="#M000208">load_file</a>&nbsp;&nbsp;
-      <a href="#M000206">new</a>&nbsp;&nbsp;
-      <a href="#M000209">process</a>&nbsp;&nbsp;
-      <a href="#M000210">process_proc</a>&nbsp;&nbsp;
+      <a href="#M000210">convert!</a>&nbsp;&nbsp;
+      <a href="#M000211">load_file</a>&nbsp;&nbsp;
+      <a href="#M000209">new</a>&nbsp;&nbsp;
+      <a href="#M000212">process</a>&nbsp;&nbsp;
+      <a href="#M000213">process_proc</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -119,11 +119,11 @@ converter module.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000208" class="method-detail">
-        <a name="M000208"></a>
+      <div id="method-M000211" class="method-detail">
+        <a name="M000211"></a>
 
         <div class="method-heading">
-          <a href="#M000208" class="method-signature">
+          <a href="#M000211" class="method-signature">
           <span class="method-name">load_file</span><span class="method-args">(filename, properties={})</span>
           </a>
         </div>
@@ -136,10 +136,10 @@ properties[:cachename], or filname + &#8216;cache&#8217; is used as
 default.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000208-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000208-source">
+            onclick="toggleCode('M000211-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000211-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine.rb, line 49</span>
+<span class="ruby-comment cmt"># File erubis/engine.rb, line 48</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">properties</span>={})
       <span class="ruby-identifier">cachename</span> = <span class="ruby-identifier">properties</span>[<span class="ruby-identifier">:cachename</span>] <span class="ruby-operator">||</span> (<span class="ruby-identifier">filename</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'.cache'</span>)
       <span class="ruby-identifier">properties</span>[<span class="ruby-identifier">:filename</span>] = <span class="ruby-identifier">filename</span>
@@ -163,11 +163,11 @@ default.
         </div>
       </div>
 
-      <div id="method-M000206" class="method-detail">
-        <a name="M000206"></a>
+      <div id="method-M000209" class="method-detail">
+        <a name="M000209"></a>
 
         <div class="method-heading">
-          <a href="#M000206" class="method-signature">
+          <a href="#M000209" class="method-signature">
           <span class="method-name">new</span><span class="method-args">(input=nil, properties={})</span>
           </a>
         </div>
@@ -179,10 +179,10 @@ href="Converter.html">Converter</a> include <a
 href="Generator.html">Generator</a>
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000206-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000206-source">
+            onclick="toggleCode('M000209-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000209-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine.rb, line 26</span>
+<span class="ruby-comment cmt"># File erubis/engine.rb, line 25</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">input</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">properties</span>={})
       <span class="ruby-comment cmt">#@input = input</span>
       <span class="ruby-identifier">init_generator</span>(<span class="ruby-identifier">properties</span>)
@@ -197,11 +197,11 @@ href="Generator.html">Generator</a>
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000207" class="method-detail">
-        <a name="M000207"></a>
+      <div id="method-M000210" class="method-detail">
+        <a name="M000210"></a>
 
         <div class="method-heading">
-          <a href="#M000207" class="method-signature">
+          <a href="#M000210" class="method-signature">
           <span class="method-name">convert!</span><span class="method-args">(input)</span>
           </a>
         </div>
@@ -211,10 +211,10 @@ href="Generator.html">Generator</a>
 convert input string and set it to @src
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000207-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000207-source">
+            onclick="toggleCode('M000210-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000210-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine.rb, line 38</span>
+<span class="ruby-comment cmt"># File erubis/engine.rb, line 37</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert!</span>(<span class="ruby-identifier">input</span>)
       <span class="ruby-ivar">@src</span> = <span class="ruby-identifier">convert</span>(<span class="ruby-identifier">input</span>)
     <span class="ruby-keyword kw">end</span>
@@ -223,11 +223,11 @@ convert input string and set it to @src
         </div>
       </div>
 
-      <div id="method-M000209" class="method-detail">
-        <a name="M000209"></a>
+      <div id="method-M000212" class="method-detail">
+        <a name="M000212"></a>
 
         <div class="method-heading">
-          <a href="#M000209" class="method-signature">
+          <a href="#M000212" class="method-signature">
           <span class="method-name">process</span><span class="method-args">(input, context=nil, filename=nil)</span>
           </a>
         </div>
@@ -238,10 +238,10 @@ helper method to convert and evaluate input text with context object.
 context may be Binding, Hash, or Object.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000209-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000209-source">
+            onclick="toggleCode('M000212-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000212-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine.rb, line 73</span>
+<span class="ruby-comment cmt"># File erubis/engine.rb, line 72</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">context</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">filename</span>=<span class="ruby-keyword kw">nil</span>)
       <span class="ruby-identifier">code</span> = <span class="ruby-identifier">convert</span>(<span class="ruby-identifier">input</span>)
       <span class="ruby-identifier">filename</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">'(erubis)'</span>
@@ -257,11 +257,11 @@ context may be Binding, Hash, or Object.
         </div>
       </div>
 
-      <div id="method-M000210" class="method-detail">
-        <a name="M000210"></a>
+      <div id="method-M000213" class="method-detail">
+        <a name="M000213"></a>
 
         <div class="method-heading">
-          <a href="#M000210" class="method-signature">
+          <a href="#M000213" class="method-signature">
           <span class="method-name">process_proc</span><span class="method-args">(proc_obj, context=nil, filename=nil)</span>
           </a>
         </div>
@@ -272,10 +272,10 @@ helper method evaluate Proc object with contect object. context may be
 Binding, Hash, or Object.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000210-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000210-source">
+            onclick="toggleCode('M000213-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000213-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine.rb, line 89</span>
+<span class="ruby-comment cmt"># File erubis/engine.rb, line 88</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_proc</span>(<span class="ruby-identifier">proc_obj</span>, <span class="ruby-identifier">context</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">filename</span>=<span class="ruby-keyword kw">nil</span>)
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Binding</span>)
         <span class="ruby-identifier">filename</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">'(erubis)'</span>

@@ -88,6 +88,7 @@
       <div class="name-list">
       <a href="#M000001">compile</a>&nbsp;&nbsp;
       <a href="#M000002">compile</a>&nbsp;&nbsp;
+      <a href="#M000003">compile</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -99,6 +100,9 @@
       <h3 class="section-bar">Included Modules</h3>
 
       <div id="includes-list">
+        <span class="include-name">Compilable</span>
+        <span class="include-name"><a href="../../Erubis/Helpers/RailsHelper/TemplateConverter.html">::Erubis::Helpers::RailsHelper::TemplateConverter</a></span>
+        <span class="include-name"><a href="../../Erubis/PreprocessingHelper.html">::Erubis::PreprocessingHelper</a></span>
         <span class="include-name">Compilable</span>
         <span class="include-name"><a href="../../Erubis/Helpers/RailsHelper/TemplateConverter.html">Erubis::Helpers::RailsHelper::TemplateConverter</a></span>
         <span class="include-name"><a href="../../Erubis/PreprocessingHelper.html">Erubis::PreprocessingHelper</a></span>
@@ -134,9 +138,10 @@
             onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000001-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/helpers/rails_helper.rb, line 150</span>
+<span class="ruby-comment cmt"># File erubis/helpers/rails_helper.rb, line 153</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>(<span class="ruby-identifier">template</span>)
-            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">_convert_template</span>(<span class="ruby-identifier">template</span>.<span class="ruby-identifier">source</span>)   <span class="ruby-comment cmt"># template.is_a?(ActionView::Template)</span>
+            <span class="ruby-comment cmt">#src = ::ERB.new(&quot;&lt;% __in_erb_template=true %&gt;#{template.source}&quot;, nil, erb_trim_mode, '@output_buffer').src</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">_convert_template</span>(<span class="ruby-node">&quot;&lt;% __in_erb_template=true %&gt;#{template.source}&quot;</span>)
           <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -157,7 +162,30 @@
             onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000002-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/helpers/rails_helper.rb, line 180</span>
+<span class="ruby-comment cmt"># File erubis/helpers/rails_helper.rb, line 179</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>(<span class="ruby-identifier">template</span>)
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">_convert_template</span>(<span class="ruby-identifier">template</span>.<span class="ruby-identifier">source</span>)   <span class="ruby-comment cmt"># template.is_a?(ActionView::Template)</span>
+          <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="#M000003" class="method-signature">
+          <span class="method-name">compile</span><span class="method-args">(template)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+<span class="ruby-comment cmt"># File erubis/helpers/rails_helper.rb, line 209</span>
           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>(<span class="ruby-identifier">template</span>)
             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">_convert_template</span>(<span class="ruby-identifier">template</span>)     <span class="ruby-comment cmt"># template.is_a?(String)</span>
           <span class="ruby-keyword kw">end</span>

@@ -1,7 +1,7 @@
 = README
 
-release::	2.6.2
-copyright::	copyright(c) 2006-2008 kuwata-lab.com all rights reserved.
+release::	2.6.6
+copyright::	copyright(c) 2006-2010 kuwata-lab.com all rights reserved.
 
 
 

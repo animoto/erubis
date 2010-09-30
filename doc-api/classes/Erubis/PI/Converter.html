@@ -88,9 +88,9 @@ this class converts &#8217;&lt;?rb &#8230; ?&gt;&#8217; and
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000045">convert</a>&nbsp;&nbsp;
-      <a href="#M000046">convert_input</a>&nbsp;&nbsp;
-      <a href="#M000044">init_converter</a>&nbsp;&nbsp;
+      <a href="#M000046">convert</a>&nbsp;&nbsp;
+      <a href="#M000047">convert_input</a>&nbsp;&nbsp;
+      <a href="#M000045">init_converter</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -137,21 +137,21 @@ this class converts &#8217;&lt;?rb &#8230; ?&gt;&#8217; and
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000045" class="method-detail">
-        <a name="M000045"></a>
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
 
         <div class="method-heading">
-          <a href="#M000045" class="method-signature">
+          <a href="#M000046" class="method-signature">
           <span class="method-name">convert</span><span class="method-args">(input)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000045-source">
+            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000046-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/converter.rb, line 225</span>
+<span class="ruby-comment cmt"># File erubis/converter.rb, line 224</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert</span>(<span class="ruby-identifier">input</span>)
       <span class="ruby-identifier">code</span> = <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">input</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@header</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@footer</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{@header}#{code}#{@footer}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">code</span>
@@ -161,21 +161,21 @@ this class converts &#8217;&lt;?rb &#8230; ?&gt;&#8217; and
         </div>
       </div>
 
-      <div id="method-M000044" class="method-detail">
-        <a name="M000044"></a>
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
 
         <div class="method-heading">
-          <a href="#M000044" class="method-signature">
+          <a href="#M000045" class="method-signature">
           <span class="method-name">init_converter</span><span class="method-args">(properties={})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000044-source">
+            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000045-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/converter.rb, line 216</span>
+<span class="ruby-comment cmt"># File erubis/converter.rb, line 215</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_converter</span>(<span class="ruby-identifier">properties</span>={})
       <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">properties</span>)
       <span class="ruby-ivar">@trim</span>    = <span class="ruby-identifier">properties</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">:trim</span>, <span class="ruby-keyword kw">true</span>)
@@ -191,21 +191,21 @@ this class converts &#8217;&lt;?rb &#8230; ?&gt;&#8217; and
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000046" class="method-detail">
-        <a name="M000046"></a>
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
 
         <div class="method-heading">
-          <a href="#M000046" class="method-signature">
+          <a href="#M000047" class="method-signature">
           <span class="method-name">convert_input</span><span class="method-args">(codebuf, input)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000046-source">
+            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000047-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/converter.rb, line 232</span>
+<span class="ruby-comment cmt"># File erubis/converter.rb, line 231</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_input</span>(<span class="ruby-identifier">codebuf</span>, <span class="ruby-identifier">input</span>)
       <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@regexp</span>
         <span class="ruby-ivar">@pi</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">'e'</span>

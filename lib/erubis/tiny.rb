@@ -1,7 +1,6 @@
 ##
-## $Rev: 115 $
-## $Release: 2.6.2 $
-## copyright(c) 2006-2008 kuwata-lab.com all rights reserved.
+## $Release: 2.6.6 $
+## copyright(c) 2006-2010 kuwata-lab.com all rights reserved.
 ##
 
 module Erubis
@@ -28,10 +27,9 @@ module Erubis
       src = "_buf = '';"           # preamble
       pos = 0
       input.scan(EMBEDDED_PATTERN) do |indicator, code|
-        match = Regexp.last_match
-        len   = match.begin(0) - pos
-        text  = input[pos, len]
-        pos   = match.end(0)
+        m = Regexp.last_match
+        text = input[pos...m.begin(0)]
+        pos  = m.end(0)
         #src << " _buf << '" << escape_text(text) << "';"
         text.gsub!(/['\\]/, '\\\\\&')
         src << " _buf << '" << text << "';" unless text.empty?

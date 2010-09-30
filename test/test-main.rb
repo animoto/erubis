@@ -1,7 +1,7 @@
 ##
-## $Rev: 116 $
-## $Release: 2.6.2 $
-## $Date: 2008-06-12 21:08:47 +0900 (Thu, 12 Jun 2008) $
+## $Rev$
+## $Release: 2.6.6 $
+## $Date$
 ##
 
 require  "#{File.dirname(__FILE__)}/test.rb"
@@ -141,28 +141,15 @@ END
 END
 
   def _test()
-    if $target
-      name = (caller()[0] =~ /in `test_(.*?)'/) && $1
-      return unless name == $target
-    end
     if @filename.nil?
       method = (caller[0] =~ /in `(.*)'/) && $1    #'
       method =~ /block in (.*)/ and method = $1    # for Ruby 1.9
       @filename = "tmp.#{method}"
     end
-    File.open(@filename, 'w') { |f| f.write(@input) } if @filename
+    File.open(@filename, 'w') {|f| f.write(@input) } if @filename
     begin
-      #if @options.is_a?(Array)
-      #  command = "ruby #{$script} #{@options.join(' ')} #{@filename}"
-      #else
-      #  command = "ruby #{$script} #{@options} #{@filename}"
-      #end
-      #output = `#{command}`
-      if @options.is_a?(Array)
-        argv = @options + [ @filename ]
-      else
-        argv = "#{@options} #{@filename}".split
-      end
+      argv = @options.is_a?(Array) ? @options.dup : @options.split
+      argv << @filename if @filename
       $stdout = output = StringWriter.new
       Erubis::Main.new.execute(argv)
     ensure
@@ -171,6 +158,12 @@ END
     end
     assert_text_equal(@expected, output)
   end
+
+  def _error_test(errclass, errmsg)
+    ex = assert_raise(errclass) { _test() }
+    assert_equal(errmsg, ex.message)
+  end
+
 
   def test_help      # -h
     @options = '-h'
@@ -182,7 +175,7 @@ END
 
   def test_version    # -v
     @options = '-v'
-    @expected = (("$Release: 2.6.2 $" =~ /[.\d]+/) && $&) + "\n"
+    @expected = (("$Release: 2.6.6 $" =~ /[.\d]+/) && $&) + "\n"
     @filename = false
     _test()
   end
@@ -204,11 +197,35 @@ END
   end
 
 
+  def _with_dummy_file
+    bindir = File.join(File.dirname(File.dirname(__FILE__)), 'bin')
+    env_path = ENV['PATH']
+    env__    = ENV['_']
+    begin
+      ENV['PATH'] = bindir + File::PATH_SEPARATOR + ENV['PATH']
+      ENV['_'] = 'erubis'
+      Tempfile.open(self.name.gsub(/[^\w]/,'_')) do |f|
+        f.write(INPUT)
+        f.flush
+        yield(f.path)
+      end
+    ensure
+      ENV['PATH'] = env_path
+      ENV['_']    = env__    if env__
+    end
+  end
+
+
   def test_syntax1    # -z (syntax ok)
     @input    = INPUT
     @expected = "Syntax OK\n"
     @options  = '-z'
     _test()
+    #
+    _with_dummy_file do |filepath|
+      actual = `erubis #{@options} #{filepath}`
+      assert_equal @expected, actual
+    end
   end
 
 
@@ -242,7 +259,7 @@ END
 -:7: syntax error, unexpected $end, expecting ')'
 END
       errmsgs << <<'END'
-7: syntax error, unexpected $end, expecting keyword_end or keyword_endfor
+7: syntax error, unexpected $end, expecting keyword_end
 END
     else
       errmsgs << <<'END'
@@ -269,7 +286,7 @@ END
     #
     begin
       (0...max).each do |i|
-        File.open(filenames[i], 'w') { |f| f.write(inputs[i]) }
+        File.open(filenames[i], 'w') {|f| f.write(inputs[i]) }
       end
       @input = '<ok/>'
       @expected = ''
@@ -368,7 +385,7 @@ END
     user:  Hello
     password:  world
     END
-    File.open(datafile, 'w') { |f| f.write(str) }
+    File.open(datafile, 'w') {|f| f.write(str) }
     begin
       _test()
     ensure
@@ -387,7 +404,7 @@ END
     @user = 'Hello'
     @password = 'world'
     END
-    File.open(datafile, 'w') { |f| f.write(str) }
+    File.open(datafile, 'w') {|f| f.write(str) }
     begin
       _test()
     ensure
@@ -406,7 +423,7 @@ END
     user:	Hello
     password:	world
     END
-    File.open(yamlfile, 'w') { |f| f.write(yaml) }
+    File.open(yamlfile, 'w') {|f| f.write(yaml) }
     begin
       _test()
     ensure
@@ -428,11 +445,11 @@ END
 	- bbb
 	- ccc
     END
-    File.open(yamlfile, 'w') { |f| f.write(yaml) }
+    File.open(yamlfile, 'w') {|f| f.write(yaml) }
     assert_raise(ArgumentError) do
       _test()
     end
-    File.open(yamlfile, 'w') { |f| f.write(yaml.gsub(/\t/, ' '*8)) }
+    File.open(yamlfile, 'w') {|f| f.write(yaml.gsub(/\t/, ' '*8)) }
     _test()
   ensure
       File.unlink(yamlfile) if test(?f, yamlfile)
@@ -498,7 +515,7 @@ list:
   - bbb
   - ccc
 END
-    File.open(yamlfile, 'w') { |f| f.write(yaml) }
+    File.open(yamlfile, 'w') {|f| f.write(yaml) }
     begin
       _test()
     ensure
@@ -614,6 +631,36 @@ END
     @expected = SRC.gsub(/<< \((.*?)\).to_s;/, '<< Erubis::XmlHelper.escape_xml(\1);')
     @options = '-ex'
     _test()
+  end
+
+
+  def test_invalid_option  # -1 (invalid option)
+    @input = INPUT
+    @options = '-1'
+    _error_test(Erubis::CommandOptionError, "-1: unknown option.")
+  end
+
+
+  def test_invalid_enhancer  # -E hoge
+    @options = '-E hoge'
+    errmsg = "hoge: no such Enhancer (try '-h' to show all enhancers)."
+    _error_test(Erubis::CommandOptionError, errmsg)
+  end
+
+
+  def test_invalid_lang  # -l hoge
+    @options = '-l hoge'
+    errmsg = "-l hoge: invalid language name (class Erubis::Ehoge not found)."
+    _error_test(Erubis::CommandOptionError, errmsg)
+  end
+
+
+  def test_missing_argument  # -E
+    @filename = false
+    @options = '-E'
+    _error_test(Erubis::CommandOptionError, "-E: enhancers required.")
+    @options = '-l'
+    _error_test(Erubis::CommandOptionError, "-l: lang required.")
   end
 
 

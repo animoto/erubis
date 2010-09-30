@@ -95,11 +95,11 @@ this is language independent.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000006">add_expr</a>&nbsp;&nbsp;
-      <a href="#M000004">add_postamble</a>&nbsp;&nbsp;
-      <a href="#M000003">add_preamble</a>&nbsp;&nbsp;
-      <a href="#M000007">add_stmt</a>&nbsp;&nbsp;
-      <a href="#M000005">add_text</a>&nbsp;&nbsp;
+      <a href="#M000007">add_expr</a>&nbsp;&nbsp;
+      <a href="#M000005">add_postamble</a>&nbsp;&nbsp;
+      <a href="#M000004">add_preamble</a>&nbsp;&nbsp;
+      <a href="#M000008">add_stmt</a>&nbsp;&nbsp;
+      <a href="#M000006">add_text</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -121,79 +121,12 @@ this is language independent.
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000006" class="method-detail">
-        <a name="M000006"></a>
-
-        <div class="method-heading">
-          <a href="#M000006" class="method-signature">
-          <span class="method-name">add_expr</span><span class="method-args">(src, code, indicator)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000006-source">
-<pre>
-<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 318</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>, <span class="ruby-identifier">indicator</span>)
-      <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000004" class="method-detail">
-        <a name="M000004"></a>
-
-        <div class="method-heading">
-          <a href="#M000004" class="method-signature">
-          <span class="method-name">add_postamble</span><span class="method-args">(src)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000004-source">
-<pre>
-<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 311</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_postamble</span>(<span class="ruby-identifier">src</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000003" class="method-detail">
-        <a name="M000003"></a>
-
-        <div class="method-heading">
-          <a href="#M000003" class="method-signature">
-          <span class="method-name">add_preamble</span><span class="method-args">(src)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000003-source">
-<pre>
-<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 308</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_preamble</span>(<span class="ruby-identifier">src</span>)
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
       <div id="method-M000007" class="method-detail">
         <a name="M000007"></a>
 
         <div class="method-heading">
           <a href="#M000007" class="method-signature">
-          <span class="method-name">add_stmt</span><span class="method-args">(src, code)</span>
+          <span class="method-name">add_expr</span><span class="method-args">(src, code, indicator)</span>
           </a>
         </div>
       
@@ -202,8 +135,8 @@ this is language independent.
             onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000007-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 322</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_stmt</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
+<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 317</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>, <span class="ruby-identifier">indicator</span>)
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
     <span class="ruby-keyword kw">end</span>
 </pre>
@@ -216,7 +149,7 @@ this is language independent.
 
         <div class="method-heading">
           <a href="#M000005" class="method-signature">
-          <span class="method-name">add_text</span><span class="method-args">(src, text)</span>
+          <span class="method-name">add_postamble</span><span class="method-args">(src)</span>
           </a>
         </div>
       
@@ -225,7 +158,74 @@ this is language independent.
             onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000005-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 314</span>
+<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 310</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_postamble</span>(<span class="ruby-identifier">src</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="#M000004" class="method-signature">
+          <span class="method-name">add_preamble</span><span class="method-args">(src)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000004-source">
+<pre>
+<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 307</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_preamble</span>(<span class="ruby-identifier">src</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="#M000008" class="method-signature">
+          <span class="method-name">add_stmt</span><span class="method-args">(src, code)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
+<pre>
+<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 321</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_stmt</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
+      <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">add_text</span><span class="method-args">(src, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+<span class="ruby-comment cmt"># File erubis/enhancer.rb, line 313</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_text</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">text</span>)
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">text</span>
     <span class="ruby-keyword kw">end</span>

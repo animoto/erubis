@@ -86,12 +86,12 @@ helper for xml
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000119">escape_xml</a>&nbsp;&nbsp;
-      <a href="#M000120">escape_xml2</a>&nbsp;&nbsp;
-      <a href="#M000121">h</a>&nbsp;&nbsp;
-      <a href="#M000122">html_escape</a>&nbsp;&nbsp;
-      <a href="#M000124">u</a>&nbsp;&nbsp;
-      <a href="#M000123">url_encode</a>&nbsp;&nbsp;
+      <a href="#M000103">escape_xml</a>&nbsp;&nbsp;
+      <a href="#M000104">escape_xml2</a>&nbsp;&nbsp;
+      <a href="#M000105">h</a>&nbsp;&nbsp;
+      <a href="#M000106">html_escape</a>&nbsp;&nbsp;
+      <a href="#M000108">u</a>&nbsp;&nbsp;
+      <a href="#M000107">url_encode</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -126,21 +126,21 @@ helper for xml
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000119" class="method-detail">
-        <a name="M000119"></a>
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
 
         <div class="method-heading">
-          <a href="#M000119" class="method-signature">
+          <a href="#M000103" class="method-signature">
           <span class="method-name">escape_xml</span><span class="method-args">(value)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000119-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000119-source">
+            onclick="toggleCode('M000103-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000103-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/helper.rb, line 25</span>
+<span class="ruby-comment cmt"># File erubis/helper.rb, line 24</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escape_xml</span>(<span class="ruby-identifier">value</span>)
       <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/[&amp;&lt;&gt;&quot;]/</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-constant">ESCAPE_TABLE</span>[<span class="ruby-identifier">s</span>] }   <span class="ruby-comment cmt"># or /[&amp;&lt;&gt;&quot;']/</span>
       <span class="ruby-comment cmt">#value.to_s.gsub(/[&amp;&lt;&gt;&quot;]/) { ESCAPE_TABLE[$&amp;] }</span>
@@ -150,21 +150,21 @@ helper for xml
         </div>
       </div>
 
-      <div id="method-M000120" class="method-detail">
-        <a name="M000120"></a>
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
 
         <div class="method-heading">
-          <a href="#M000120" class="method-signature">
+          <a href="#M000104" class="method-signature">
           <span class="method-name">escape_xml2</span><span class="method-args">(value)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000120-source">
+            onclick="toggleCode('M000104-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000104-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/helper.rb, line 30</span>
+<span class="ruby-comment cmt"># File erubis/helper.rb, line 29</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escape_xml2</span>(<span class="ruby-identifier">value</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\&amp;/</span>,<span class="ruby-value str">'&amp;amp;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/&lt;/</span>,<span class="ruby-value str">'&amp;lt;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/&gt;/</span>,<span class="ruby-value str">'&amp;gt;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/&quot;/</span>,<span class="ruby-value str">'&amp;quot;'</span>)
     <span class="ruby-keyword kw">end</span>
@@ -173,8 +173,8 @@ helper for xml
         </div>
       </div>
 
-      <div id="method-M000121" class="method-detail">
-        <a name="M000121"></a>
+      <div id="method-M000105" class="method-detail">
+        <a name="M000105"></a>
 
         <div class="method-heading">
           <span class="method-name">h</span><span class="method-args">(value)</span>
@@ -182,13 +182,13 @@ helper for xml
       
         <div class="method-description">
           <p>
-Alias for <a href="XmlHelper.html#M000119">escape_xml</a>
+Alias for <a href="XmlHelper.html#M000103">escape_xml</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000122" class="method-detail">
-        <a name="M000122"></a>
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
 
         <div class="method-heading">
           <span class="method-name">html_escape</span><span class="method-args">(value)</span>
@@ -196,13 +196,13 @@ Alias for <a href="XmlHelper.html#M000119">escape_xml</a>
       
         <div class="method-description">
           <p>
-Alias for <a href="XmlHelper.html#M000119">escape_xml</a>
+Alias for <a href="XmlHelper.html#M000103">escape_xml</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000124" class="method-detail">
-        <a name="M000124"></a>
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
 
         <div class="method-heading">
           <span class="method-name">u</span><span class="method-args">(str)</span>
@@ -210,26 +210,26 @@ Alias for <a href="XmlHelper.html#M000119">escape_xml</a>
       
         <div class="method-description">
           <p>
-Alias for <a href="XmlHelper.html#M000123">url_encode</a>
+Alias for <a href="XmlHelper.html#M000107">url_encode</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000123" class="method-detail">
-        <a name="M000123"></a>
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
 
         <div class="method-heading">
-          <a href="#M000123" class="method-signature">
+          <a href="#M000107" class="method-signature">
           <span class="method-name">url_encode</span><span class="method-args">(str)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000123-source">
+            onclick="toggleCode('M000107-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000107-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/helper.rb, line 37</span>
+<span class="ruby-comment cmt"># File erubis/helper.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_encode</span>(<span class="ruby-identifier">str</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/[^-_.a-zA-Z0-9]+/</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
         <span class="ruby-identifier">s</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'C*'</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-value str">&quot;%%%02X&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">i</span> }.<span class="ruby-identifier">join</span>

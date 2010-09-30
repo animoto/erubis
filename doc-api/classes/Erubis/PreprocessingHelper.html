@@ -86,10 +86,10 @@ helper methods for preprocessing
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000064">_?</a>&nbsp;&nbsp;
-      <a href="#M000063">_P</a>&nbsp;&nbsp;
-      <a href="#M000065">_decode</a>&nbsp;&nbsp;
-      <a href="#M000062">_p</a>&nbsp;&nbsp;
+      <a href="#M000144">_?</a>&nbsp;&nbsp;
+      <a href="#M000143">_P</a>&nbsp;&nbsp;
+      <a href="#M000145">_decode</a>&nbsp;&nbsp;
+      <a href="#M000142">_p</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,8 +111,8 @@ helper methods for preprocessing
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000064" class="method-detail">
-        <a name="M000064"></a>
+      <div id="method-M000144" class="method-detail">
+        <a name="M000144"></a>
 
         <div class="method-heading">
           <span class="method-name">_?</span><span class="method-args">(arg)</span>
@@ -120,26 +120,26 @@ helper methods for preprocessing
       
         <div class="method-description">
           <p>
-Alias for <a href="PreprocessingHelper.html#M000062">_p</a>
+Alias for <a href="PreprocessingHelper.html#M000142">_p</a>
 </p>
         </div>
       </div>
 
-      <div id="method-M000063" class="method-detail">
-        <a name="M000063"></a>
+      <div id="method-M000143" class="method-detail">
+        <a name="M000143"></a>
 
         <div class="method-heading">
-          <a href="#M000063" class="method-signature">
+          <a href="#M000143" class="method-signature">
           <span class="method-name">_P</span><span class="method-args">(arg)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000063-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000063-source">
+            onclick="toggleCode('M000143-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000143-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/preprocessing.rb, line 43</span>
+<span class="ruby-comment cmt"># File erubis/preprocessing.rb, line 42</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_P</span>(<span class="ruby-identifier">arg</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;&lt;%=h(#{arg})%&gt;&quot;</span>
     <span class="ruby-keyword kw">end</span>
@@ -148,21 +148,21 @@ Alias for <a href="PreprocessingHelper.html#M000062">_p</a>
         </div>
       </div>
 
-      <div id="method-M000065" class="method-detail">
-        <a name="M000065"></a>
+      <div id="method-M000145" class="method-detail">
+        <a name="M000145"></a>
 
         <div class="method-heading">
-          <a href="#M000065" class="method-signature">
+          <a href="#M000145" class="method-signature">
           <span class="method-name">_decode</span><span class="method-args">(arg)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000065-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000065-source">
+            onclick="toggleCode('M000145-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000145-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/preprocessing.rb, line 49</span>
+<span class="ruby-comment cmt"># File erubis/preprocessing.rb, line 48</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_decode</span>(<span class="ruby-identifier">arg</span>)
       <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>
       <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/%3C%25(?:=|%3D)(.*?)%25%3E/</span>) { <span class="ruby-node">&quot;&lt;%=#{CGI.unescape($1)}%&gt;&quot;</span> }
@@ -174,21 +174,21 @@ Alias for <a href="PreprocessingHelper.html#M000062">_p</a>
         </div>
       </div>
 
-      <div id="method-M000062" class="method-detail">
-        <a name="M000062"></a>
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
 
         <div class="method-heading">
-          <a href="#M000062" class="method-signature">
+          <a href="#M000142" class="method-signature">
           <span class="method-name">_p</span><span class="method-args">(arg)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000062-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000062-source">
+            onclick="toggleCode('M000142-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000142-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/preprocessing.rb, line 39</span>
+<span class="ruby-comment cmt"># File erubis/preprocessing.rb, line 38</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_p</span>(<span class="ruby-identifier">arg</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;&lt;%=#{arg}%&gt;&quot;</span>
     <span class="ruby-keyword kw">end</span>

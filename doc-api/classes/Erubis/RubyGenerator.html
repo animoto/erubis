@@ -86,14 +86,14 @@ code generator for Ruby
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000043">add_expr_debug</a>&nbsp;&nbsp;
-      <a href="#M000042">add_expr_escaped</a>&nbsp;&nbsp;
-      <a href="#M000041">add_expr_literal</a>&nbsp;&nbsp;
-      <a href="#M000040">add_stmt</a>&nbsp;&nbsp;
-      <a href="#M000039">add_text</a>&nbsp;&nbsp;
-      <a href="#M000037">escape_text</a>&nbsp;&nbsp;
-      <a href="#M000038">escaped_expr</a>&nbsp;&nbsp;
-      <a href="#M000036">init_generator</a>&nbsp;&nbsp;
+      <a href="#M000118">add_expr_debug</a>&nbsp;&nbsp;
+      <a href="#M000117">add_expr_escaped</a>&nbsp;&nbsp;
+      <a href="#M000116">add_expr_literal</a>&nbsp;&nbsp;
+      <a href="#M000115">add_stmt</a>&nbsp;&nbsp;
+      <a href="#M000114">add_text</a>&nbsp;&nbsp;
+      <a href="#M000112">escape_text</a>&nbsp;&nbsp;
+      <a href="#M000113">escaped_expr</a>&nbsp;&nbsp;
+      <a href="#M000111">init_generator</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -123,21 +123,21 @@ code generator for Ruby
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000043" class="method-detail">
-        <a name="M000043"></a>
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
 
         <div class="method-heading">
-          <a href="#M000043" class="method-signature">
+          <a href="#M000118" class="method-signature">
           <span class="method-name">add_expr_debug</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000043-source">
+            onclick="toggleCode('M000118-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000118-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 63</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 62</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr_debug</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">code</span>.<span class="ruby-identifier">strip!</span>
       <span class="ruby-identifier">s</span> = (<span class="ruby-identifier">code</span>.<span class="ruby-identifier">dump</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\A&quot;(.*)&quot;\z/</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">$1</span>
@@ -148,21 +148,21 @@ code generator for Ruby
         </div>
       </div>
 
-      <div id="method-M000042" class="method-detail">
-        <a name="M000042"></a>
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
 
         <div class="method-heading">
-          <a href="#M000042" class="method-signature">
+          <a href="#M000117" class="method-signature">
           <span class="method-name">add_expr_escaped</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000042-source">
+            onclick="toggleCode('M000117-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000117-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 59</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 58</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr_escaped</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">' _buf &lt;&lt; '</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">escaped_expr</span>(<span class="ruby-identifier">code</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">';'</span>
     <span class="ruby-keyword kw">end</span>
@@ -171,21 +171,21 @@ code generator for Ruby
         </div>
       </div>
 
-      <div id="method-M000041" class="method-detail">
-        <a name="M000041"></a>
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
 
         <div class="method-heading">
-          <a href="#M000041" class="method-signature">
+          <a href="#M000116" class="method-signature">
           <span class="method-name">add_expr_literal</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000041-source">
+            onclick="toggleCode('M000116-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000116-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 55</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 54</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr_literal</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">' _buf &lt;&lt; ('</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">').to_s;'</span>
     <span class="ruby-keyword kw">end</span>
@@ -194,21 +194,21 @@ code generator for Ruby
         </div>
       </div>
 
-      <div id="method-M000040" class="method-detail">
-        <a name="M000040"></a>
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
 
         <div class="method-heading">
-          <a href="#M000040" class="method-signature">
+          <a href="#M000115" class="method-signature">
           <span class="method-name">add_stmt</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000040-source">
+            onclick="toggleCode('M000115-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000115-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 49</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 48</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_stmt</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-comment cmt">#src &lt;&lt; code &lt;&lt; ';'</span>
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>
@@ -219,21 +219,21 @@ code generator for Ruby
         </div>
       </div>
 
-      <div id="method-M000039" class="method-detail">
-        <a name="M000039"></a>
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
 
         <div class="method-heading">
-          <a href="#M000039" class="method-signature">
+          <a href="#M000114" class="method-signature">
           <span class="method-name">add_text</span><span class="method-args">(src, text)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000039-source">
+            onclick="toggleCode('M000114-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000114-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 45</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 44</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_text</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">text</span>)
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot; _buf &lt;&lt; '&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">escape_text</span>(<span class="ruby-identifier">text</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;';&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">empty?</span>
     <span class="ruby-keyword kw">end</span>
@@ -242,21 +242,21 @@ code generator for Ruby
         </div>
       </div>
 
-      <div id="method-M000037" class="method-detail">
-        <a name="M000037"></a>
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
 
         <div class="method-heading">
-          <a href="#M000037" class="method-signature">
+          <a href="#M000112" class="method-signature">
           <span class="method-name">escape_text</span><span class="method-args">(text)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000037-source">
+            onclick="toggleCode('M000112-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000112-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 31</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 30</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escape_text</span>(<span class="ruby-identifier">text</span>)
       <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/['\\]/</span>, <span class="ruby-value str">'\\\\\&amp;'</span>)   <span class="ruby-comment cmt"># &quot;'&quot; =&gt; &quot;\\'&quot;,  '\\' =&gt; '\\\\'</span>
     <span class="ruby-keyword kw">end</span>
@@ -265,21 +265,21 @@ code generator for Ruby
         </div>
       </div>
 
-      <div id="method-M000038" class="method-detail">
-        <a name="M000038"></a>
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
 
         <div class="method-heading">
-          <a href="#M000038" class="method-signature">
+          <a href="#M000113" class="method-signature">
           <span class="method-name">escaped_expr</span><span class="method-args">(code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000038-source">
+            onclick="toggleCode('M000113-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000113-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 35</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 34</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escaped_expr</span>(<span class="ruby-identifier">code</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;#{@escapefunc}(#{code})&quot;</span>
     <span class="ruby-keyword kw">end</span>
@@ -288,21 +288,21 @@ code generator for Ruby
         </div>
       </div>
 
-      <div id="method-M000036" class="method-detail">
-        <a name="M000036"></a>
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
 
         <div class="method-heading">
-          <a href="#M000036" class="method-signature">
+          <a href="#M000111" class="method-signature">
           <span class="method-name">init_generator</span><span class="method-args">(properties={})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000036-source">
+            onclick="toggleCode('M000111-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000111-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 22</span>
+<span class="ruby-comment cmt"># File erubis/engine/eruby.rb, line 21</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_generator</span>(<span class="ruby-identifier">properties</span>={})
       <span class="ruby-keyword kw">super</span>
       <span class="ruby-ivar">@escapefunc</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">&quot;Erubis::XmlHelper.escape_xml&quot;</span>

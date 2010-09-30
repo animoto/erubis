@@ -1,7 +1,6 @@
 ##
-## $Rev: 99 $
-## $Release: 2.6.2 $
-## copyright(c) 2006-2008 kuwata-lab.com all rights reserved.
+## $Release: 2.6.6 $
+## copyright(c) 2006-2010 kuwata-lab.com all rights reserved.
 ##
 
 ##
@@ -48,7 +47,7 @@
 
 
 module Erubis
-  VERSION = ('$Release: 2.6.2 $' =~ /([.\d]+)/) && $1
+  VERSION = ('$Release: 2.6.6 $' =~ /([.\d]+)/) && $1
 end
 
 require 'erubis/engine'

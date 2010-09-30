@@ -80,7 +80,7 @@
 
     <div id="description">
       <p>
-<a href="Main.html#M000212">main</a> class of command
+<a href="Main.html#M000215">main</a> class of command
 </p>
 <p>
 ex.
@@ -98,9 +98,9 @@ ex.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000214">execute</a>&nbsp;&nbsp;
-      <a href="#M000212">main</a>&nbsp;&nbsp;
-      <a href="#M000213">new</a>&nbsp;&nbsp;
+      <a href="#M000217">execute</a>&nbsp;&nbsp;
+      <a href="#M000215">main</a>&nbsp;&nbsp;
+      <a href="#M000216">new</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -122,21 +122,21 @@ ex.
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000212" class="method-detail">
-        <a name="M000212"></a>
+      <div id="method-M000215" class="method-detail">
+        <a name="M000215"></a>
 
         <div class="method-heading">
-          <a href="#M000212" class="method-signature">
+          <a href="#M000215" class="method-signature">
           <span class="method-name">main</span><span class="method-args">(argv=ARGV)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000212-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000212-source">
+            onclick="toggleCode('M000215-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000215-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/main.rb, line 40</span>
+<span class="ruby-comment cmt"># File erubis/main.rb, line 39</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">main</span>(<span class="ruby-identifier">argv</span>=<span class="ruby-constant">ARGV</span>)
       <span class="ruby-identifier">status</span> = <span class="ruby-value">0</span>
       <span class="ruby-keyword kw">begin</span>
@@ -152,21 +152,21 @@ ex.
         </div>
       </div>
 
-      <div id="method-M000213" class="method-detail">
-        <a name="M000213"></a>
+      <div id="method-M000216" class="method-detail">
+        <a name="M000216"></a>
 
         <div class="method-heading">
-          <a href="#M000213" class="method-signature">
+          <a href="#M000216" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000213-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000213-source">
+            onclick="toggleCode('M000216-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000216-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/main.rb, line 51</span>
+<span class="ruby-comment cmt"># File erubis/main.rb, line 50</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
       <span class="ruby-ivar">@single_options</span> = <span class="ruby-value str">&quot;hvxztTSbeBXNUC&quot;</span>
       <span class="ruby-ivar">@arg_options</span>    = <span class="ruby-value str">&quot;pcrfKIlaE&quot;</span> <span class="ruby-comment cmt">#C</span>
@@ -208,28 +208,28 @@ ex.
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000214" class="method-detail">
-        <a name="M000214"></a>
+      <div id="method-M000217" class="method-detail">
+        <a name="M000217"></a>
 
         <div class="method-heading">
-          <a href="#M000214" class="method-signature">
+          <a href="#M000217" class="method-signature">
           <span class="method-name">execute</span><span class="method-args">(argv=ARGV)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000214-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000214-source">
+            onclick="toggleCode('M000217-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000217-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/main.rb, line 87</span>
+<span class="ruby-comment cmt"># File erubis/main.rb, line 86</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute</span>(<span class="ruby-identifier">argv</span>=<span class="ruby-constant">ARGV</span>)
       <span class="ruby-comment cmt">## parse command-line options</span>
       <span class="ruby-identifier">options</span>, <span class="ruby-identifier">properties</span> = <span class="ruby-identifier">parse_argv</span>(<span class="ruby-identifier">argv</span>, <span class="ruby-ivar">@single_options</span>, <span class="ruby-ivar">@arg_options</span>)
       <span class="ruby-identifier">filenames</span> = <span class="ruby-identifier">argv</span>
       <span class="ruby-identifier">options</span>[<span class="ruby-value str">'h'</span>] = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">properties</span>[<span class="ruby-identifier">:help</span>]
       <span class="ruby-identifier">opts</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
-      <span class="ruby-identifier">arr</span> = <span class="ruby-ivar">@option_names</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;def #{name}; @#{name}; end\n&quot;</span> }
+      <span class="ruby-identifier">arr</span> = <span class="ruby-ivar">@option_names</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ch</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;def #{name}; @#{name}; end\n&quot;</span> }
       <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">join</span>
       <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
         <span class="ruby-identifier">name</span> = <span class="ruby-ivar">@option_names</span>[<span class="ruby-identifier">ch</span>]
@@ -305,7 +305,8 @@ ex.
       <span class="ruby-identifier">msg</span> = <span class="ruby-value str">&quot;Syntax OK\n&quot;</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filenames</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">filenames</span>.<span class="ruby-identifier">empty?</span>
         <span class="ruby-identifier">filenames</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span><span class="ruby-operator">|</span>
-          <span class="ruby-identifier">test</span>(<span class="ruby-value">?f</span>, <span class="ruby-identifier">filename</span>)  <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">CommandOptionError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{filename}: file not found.&quot;</span>)
+          <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">filename</span>)  <span class="ruby-keyword kw">or</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">CommandOptionError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{filename}: file not found.&quot;</span>)
           <span class="ruby-identifier">engine</span>.<span class="ruby-identifier">filename</span> = <span class="ruby-identifier">filename</span>
           <span class="ruby-identifier">engine</span>.<span class="ruby-identifier">convert!</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>))
           <span class="ruby-identifier">val</span> = <span class="ruby-identifier">do_action</span>(<span class="ruby-identifier">action</span>, <span class="ruby-identifier">engine</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">opts</span>)

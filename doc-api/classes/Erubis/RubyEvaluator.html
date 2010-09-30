@@ -135,7 +135,7 @@ define singleton method to it.
             onclick="toggleCode('M000197-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000197-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/evaluator.rb, line 80</span>
+<span class="ruby-comment cmt"># File erubis/evaluator.rb, line 79</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">def_method</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">filename</span>=<span class="ruby-keyword kw">nil</span>)
       <span class="ruby-identifier">m</span> = <span class="ruby-identifier">object</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Module</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">:module_eval</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">:instance_eval</span>
       <span class="ruby-identifier">object</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">m</span>, <span class="ruby-node">&quot;def #{method_name}; #{@src}; end&quot;</span>, <span class="ruby-identifier">filename</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@filename</span> <span class="ruby-operator">||</span> <span class="ruby-value str">'(erubis)'</span>)
@@ -162,7 +162,7 @@ invoke context.instance_eval(@src)
             onclick="toggleCode('M000196-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000196-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/evaluator.rb, line 70</span>
+<span class="ruby-comment cmt"># File erubis/evaluator.rb, line 69</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">evaluate</span>(<span class="ruby-identifier">_context</span>=<span class="ruby-constant">Context</span>.<span class="ruby-identifier">new</span>)
       <span class="ruby-identifier">_context</span> = <span class="ruby-constant">Context</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">_context</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_context</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
       <span class="ruby-comment cmt">#return _context.instance_eval(@src, @filename || '(erubis)')</span>
@@ -192,7 +192,7 @@ eval(@src) with binding object
             onclick="toggleCode('M000195-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000195-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/evaluator.rb, line 54</span>
+<span class="ruby-comment cmt"># File erubis/evaluator.rb, line 53</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">result</span>(<span class="ruby-identifier">_binding_or_hash</span>=<span class="ruby-constant">TOPLEVEL_BINDING</span>)
       <span class="ruby-identifier">_arg</span> = <span class="ruby-identifier">_binding_or_hash</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">_arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)

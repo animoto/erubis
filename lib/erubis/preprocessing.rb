@@ -1,7 +1,6 @@
 ###
-### $Rev: 102 $
-### $Release: 2.6.2 $
-### copyright(c) 2006-2008 kuwata-lab.com all rights reserved.
+### $Release: 2.6.6 $
+### copyright(c) 2006-2010 kuwata-lab.com all rights reserved.
 ###
 
 require 'cgi'

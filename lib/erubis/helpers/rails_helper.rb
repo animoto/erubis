@@ -1,7 +1,6 @@
 ###
-### $Rev: 112 $
-### $Release: 2.6.2 $
-### copyright(c) 2006-2008 kuwata-lab.com all rights reserved.
+### $Release: 2.6.6 $
+### copyright(c) 2006-2010 kuwata-lab.com all rights reserved.
 ###
 
 
@@ -97,12 +96,12 @@ module Erubis
           if ::Erubis::Helpers::RailsHelper.preprocessing
             preprocessor = _create_preprocessor(template)
             template = preprocessor.evaluate(_preprocessing_context_object())
-            logger.info "** Erubis: preprocessed==<<'END'\n#{template}END\n" if show_src
+            _logger_info "** Erubis: preprocessed==<<'END'\n#{template}END\n" if show_src
           end
           ## convert into ruby code
           src = klass.new(template, properties).src
           #src.insert(0, '_erbout = ')
-          logger.info "** Erubis: src==<<'END'\n#{src}END\n" if show_src
+          _logger_info "** Erubis: src==<<'END'\n#{src}END\n" if show_src
           return src
         end
         def _create_preprocessor(template)
@@ -110,6 +109,9 @@ module Erubis
         end
         def _preprocessing_context_object
           return self
+        end
+        def _logger_info(message)
+          logger.info message
         end
       end
 
@@ -134,11 +136,38 @@ end
 
 require 'action_pack/version'
 
+rails22 = false
 
 if ActionPack::VERSION::MAJOR >= 2             ### Rails 2.X
 
 
-  if ActionPack::VERSION::MINOR >=1            ### Rails 2.1 or higher
+  if ActionPack::VERSION::MINOR >=2            ### Rails 2.2, 2.3 or higher
+
+    rails22 = true
+    module ActionView
+      module TemplateHandlers
+        class ErubisHandler < TemplateHandler
+          include Compilable
+          include ::Erubis::Helpers::RailsHelper::TemplateConverter
+          include ::Erubis::PreprocessingHelper
+          def compile(template)
+            #src = ::ERB.new("<% __in_erb_template=true %>#{template.source}", nil, erb_trim_mode, '@output_buffer').src
+            return _convert_template("<% __in_erb_template=true %>#{template.source}")
+          end
+        end
+      end
+      handler_klass = TemplateHandlers::ErubisHandler
+      Template.register_default_template_handler :erb, handler_klass
+      Template.register_template_handler :rhtml, handler_klass
+    end
+    module Erubis::Helpers::RailsHelper::TemplateConverter
+      def _logger_info(message)
+        #logger.info message   # logger.info seems not available in Rails 2.2
+        ActionController::Base.new.logger.info message
+      end
+    end
+
+  elsif ActionPack::VERSION::MINOR >=1            ### Rails 2.1
 
     module ActionView
       module TemplateHandlers # :nodoc:
@@ -320,6 +349,5 @@ end   ###
 
 
 ## finish
-ac = ActionController::Base.new
-ac.logger.info "** Erubis #{::Erubis::VERSION}"
-#$stdout.puts "** Erubis #{::Erubis::VERSION}"
+ActionController::Base.new.logger.info "** Erubis #{::Erubis::VERSION}"
+$stdout.puts "** Erubis #{::Erubis::VERSION}" if rails22

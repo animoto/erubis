@@ -80,16 +80,16 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000034">add_expr_debug</a>&nbsp;&nbsp;
-      <a href="#M000033">add_expr_escaped</a>&nbsp;&nbsp;
-      <a href="#M000032">add_expr_literal</a>&nbsp;&nbsp;
-      <a href="#M000035">add_postamble</a>&nbsp;&nbsp;
-      <a href="#M000027">add_preamble</a>&nbsp;&nbsp;
-      <a href="#M000031">add_stmt</a>&nbsp;&nbsp;
-      <a href="#M000030">add_text</a>&nbsp;&nbsp;
-      <a href="#M000028">escape_text</a>&nbsp;&nbsp;
-      <a href="#M000029">escaped_expr</a>&nbsp;&nbsp;
-      <a href="#M000026">init_generator</a>&nbsp;&nbsp;
+      <a href="#M000043">add_expr_debug</a>&nbsp;&nbsp;
+      <a href="#M000042">add_expr_escaped</a>&nbsp;&nbsp;
+      <a href="#M000041">add_expr_literal</a>&nbsp;&nbsp;
+      <a href="#M000044">add_postamble</a>&nbsp;&nbsp;
+      <a href="#M000036">add_preamble</a>&nbsp;&nbsp;
+      <a href="#M000040">add_stmt</a>&nbsp;&nbsp;
+      <a href="#M000039">add_text</a>&nbsp;&nbsp;
+      <a href="#M000037">escape_text</a>&nbsp;&nbsp;
+      <a href="#M000038">escaped_expr</a>&nbsp;&nbsp;
+      <a href="#M000035">init_generator</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -118,21 +118,21 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000034" class="method-detail">
-        <a name="M000034"></a>
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
 
         <div class="method-heading">
-          <a href="#M000034" class="method-signature">
+          <a href="#M000043" class="method-signature">
           <span class="method-name">add_expr_debug</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000034-source">
+            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000043-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 72</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 71</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr_debug</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">s</span> = (<span class="ruby-identifier">code</span>.<span class="ruby-identifier">strip!</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">code</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\&quot;/</span>, <span class="ruby-value str">'\\&quot;'</span>)
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;(display \&quot;*** debug: #{s}=\&quot;)(display #{code.strip})(display \&quot;\\n\&quot;)&quot;</span>
@@ -142,21 +142,21 @@
         </div>
       </div>
 
-      <div id="method-M000033" class="method-detail">
-        <a name="M000033"></a>
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
 
         <div class="method-heading">
-          <a href="#M000033" class="method-signature">
+          <a href="#M000042" class="method-signature">
           <span class="method-name">add_expr_escaped</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000033-source">
+            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000042-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 68</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 67</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr_escaped</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">add_expr_literal</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">escaped_expr</span>(<span class="ruby-identifier">code</span>))
     <span class="ruby-keyword kw">end</span>
@@ -165,21 +165,21 @@
         </div>
       </div>
 
-      <div id="method-M000032" class="method-detail">
-        <a name="M000032"></a>
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
 
         <div class="method-heading">
-          <a href="#M000032" class="method-signature">
+          <a href="#M000041" class="method-signature">
           <span class="method-name">add_expr_literal</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000032-source">
+            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000041-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 63</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 62</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr_literal</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">code</span>.<span class="ruby-identifier">strip!</span>
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;(#{@func} #{code})&quot;</span>
@@ -189,21 +189,21 @@
         </div>
       </div>
 
-      <div id="method-M000035" class="method-detail">
-        <a name="M000035"></a>
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
 
         <div class="method-heading">
-          <a href="#M000035" class="method-signature">
+          <a href="#M000044" class="method-signature">
           <span class="method-name">add_postamble</span><span class="method-args">(src)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000035-source">
+            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000044-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 77</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 76</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_postamble</span>(<span class="ruby-identifier">src</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@func</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'_add'</span>
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">src</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">?\n</span>
@@ -214,21 +214,21 @@
         </div>
       </div>
 
-      <div id="method-M000027" class="method-detail">
-        <a name="M000027"></a>
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
 
         <div class="method-heading">
-          <a href="#M000027" class="method-signature">
+          <a href="#M000036" class="method-signature">
           <span class="method-name">add_preamble</span><span class="method-args">(src)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000027-source">
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 29</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 28</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_preamble</span>(<span class="ruby-identifier">src</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@func</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'_add'</span>
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;(let ((_buf '())) &quot;</span> <span class="ruby-operator">+</span> \
@@ -240,21 +240,21 @@
         </div>
       </div>
 
-      <div id="method-M000031" class="method-detail">
-        <a name="M000031"></a>
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
 
         <div class="method-heading">
-          <a href="#M000031" class="method-signature">
+          <a href="#M000040" class="method-signature">
           <span class="method-name">add_stmt</span><span class="method-args">(src, code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000031-source">
+            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000040-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 59</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 58</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_stmt</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>
     <span class="ruby-keyword kw">end</span>
@@ -263,21 +263,21 @@
         </div>
       </div>
 
-      <div id="method-M000030" class="method-detail">
-        <a name="M000030"></a>
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
 
         <div class="method-heading">
-          <a href="#M000030" class="method-signature">
+          <a href="#M000039" class="method-signature">
           <span class="method-name">add_text</span><span class="method-args">(src, text)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000030-source">
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 48</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 47</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_text</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">text</span>)
       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">empty?</span>
       <span class="ruby-identifier">t</span> = <span class="ruby-identifier">escape_text</span>(<span class="ruby-identifier">text</span>)
@@ -293,21 +293,21 @@
         </div>
       </div>
 
-      <div id="method-M000028" class="method-detail">
-        <a name="M000028"></a>
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
 
         <div class="method-heading">
-          <a href="#M000028" class="method-signature">
+          <a href="#M000037" class="method-signature">
           <span class="method-name">escape_text</span><span class="method-args">(text)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000028-source">
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 37</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escape_text</span>(<span class="ruby-identifier">text</span>)
       <span class="ruby-ivar">@table_</span> <span class="ruby-operator">||=</span> { <span class="ruby-value str">'&quot;'</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">'\\&quot;'</span>, <span class="ruby-value str">'\\'</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">'\\\\'</span> }
       <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/[&quot;\\]/</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@table_</span>[<span class="ruby-identifier">m</span>] }
@@ -318,21 +318,21 @@
         </div>
       </div>
 
-      <div id="method-M000029" class="method-detail">
-        <a name="M000029"></a>
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
 
         <div class="method-heading">
-          <a href="#M000029" class="method-signature">
+          <a href="#M000038" class="method-signature">
           <span class="method-name">escaped_expr</span><span class="method-args">(code)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000029-source">
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 43</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 42</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escaped_expr</span>(<span class="ruby-identifier">code</span>)
       <span class="ruby-identifier">code</span>.<span class="ruby-identifier">strip!</span>
       <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;(#{@escapefunc} #{code})&quot;</span>
@@ -342,21 +342,21 @@
         </div>
       </div>
 
-      <div id="method-M000026" class="method-detail">
-        <a name="M000026"></a>
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
 
         <div class="method-heading">
-          <a href="#M000026" class="method-signature">
+          <a href="#M000035" class="method-signature">
           <span class="method-name">init_generator</span><span class="method-args">(properties={})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000026-source">
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 23</span>
+<span class="ruby-comment cmt"># File erubis/engine/escheme.rb, line 22</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_generator</span>(<span class="ruby-identifier">properties</span>={})
       <span class="ruby-keyword kw">super</span>
       <span class="ruby-ivar">@escapefunc</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">'escape'</span>

@@ -86,10 +86,10 @@ basic converter which supports &#8217;&lt;% &#8230; %&gt;&#8217; notation.
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000061">add_expr</a>&nbsp;&nbsp;
-      <a href="#M000060">convert_input</a>&nbsp;&nbsp;
-      <a href="#M000058">init_converter</a>&nbsp;&nbsp;
-      <a href="#M000059">pattern_regexp</a>&nbsp;&nbsp;
+      <a href="#M000141">add_expr</a>&nbsp;&nbsp;
+      <a href="#M000140">convert_input</a>&nbsp;&nbsp;
+      <a href="#M000138">init_converter</a>&nbsp;&nbsp;
+      <a href="#M000139">pattern_regexp</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -156,11 +156,11 @@ DEFAULT_REGEXP = /&lt;%(=+|\#)?(.*?)-?%&gt;([ \t]*\r?\n)?/m
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000061" class="method-detail">
-        <a name="M000061"></a>
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
 
         <div class="method-heading">
-          <a href="#M000061" class="method-signature">
+          <a href="#M000141" class="method-signature">
           <span class="method-name">add_expr</span><span class="method-args">(src, code, indicator)</span>
           </a>
         </div>
@@ -170,10 +170,10 @@ DEFAULT_REGEXP = /&lt;%(=+|\#)?(.*?)-?%&gt;([ \t]*\r?\n)?/m
 add expression code to src
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000061-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000061-source">
+            onclick="toggleCode('M000141-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000141-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/converter.rb, line 177</span>
+<span class="ruby-comment cmt"># File erubis/converter.rb, line 176</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_expr</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>, <span class="ruby-identifier">indicator</span>)
       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">indicator</span>
       <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'='</span>
@@ -189,21 +189,21 @@ add expression code to src
         </div>
       </div>
 
-      <div id="method-M000060" class="method-detail">
-        <a name="M000060"></a>
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
 
         <div class="method-heading">
-          <a href="#M000060" class="method-signature">
+          <a href="#M000140" class="method-signature">
           <span class="method-name">convert_input</span><span class="method-args">(src, input)</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000060-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000060-source">
+            onclick="toggleCode('M000140-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000140-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/converter.rb, line 128</span>
+<span class="ruby-comment cmt"># File erubis/converter.rb, line 127</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_input</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">input</span>)
       <span class="ruby-identifier">pat</span> = <span class="ruby-ivar">@pattern</span>
       <span class="ruby-identifier">regexp</span> = <span class="ruby-identifier">pat</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">pat</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'&lt;% %&gt;'</span> <span class="ruby-operator">?</span> <span class="ruby-constant">DEFAULT_REGEXP</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">pattern_regexp</span>(<span class="ruby-identifier">pat</span>)
@@ -256,21 +256,21 @@ add expression code to src
         </div>
       </div>
 
-      <div id="method-M000058" class="method-detail">
-        <a name="M000058"></a>
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
 
         <div class="method-heading">
-          <a href="#M000058" class="method-signature">
+          <a href="#M000138" class="method-signature">
           <span class="method-name">init_converter</span><span class="method-args">(properties={})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000058-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000058-source">
+            onclick="toggleCode('M000138-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000138-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/converter.rb, line 104</span>
+<span class="ruby-comment cmt"># File erubis/converter.rb, line 103</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_converter</span>(<span class="ruby-identifier">properties</span>={})
       <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">properties</span>)
       <span class="ruby-ivar">@pattern</span> = <span class="ruby-identifier">properties</span>[<span class="ruby-identifier">:pattern</span>]
@@ -283,11 +283,11 @@ add expression code to src
 
       <h3 class="section-bar">Protected Instance methods</h3>
 
-      <div id="method-M000059" class="method-detail">
-        <a name="M000059"></a>
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
 
         <div class="method-heading">
-          <a href="#M000059" class="method-signature">
+          <a href="#M000139" class="method-signature">
           <span class="method-name">pattern_regexp</span><span class="method-args">(pattern)</span>
           </a>
         </div>
@@ -297,10 +297,10 @@ add expression code to src
 return regexp of pattern to parse eRuby script
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000059-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000059-source">
+            onclick="toggleCode('M000139-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000139-source">
 <pre>
-<span class="ruby-comment cmt"># File erubis/converter.rb, line 113</span>
+<span class="ruby-comment cmt"># File erubis/converter.rb, line 112</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pattern_regexp</span>(<span class="ruby-identifier">pattern</span>)
       <span class="ruby-ivar">@prefix</span>, <span class="ruby-ivar">@postfix</span> = <span class="ruby-identifier">pattern</span>.<span class="ruby-identifier">split</span>()   <span class="ruby-comment cmt"># '&lt;% %&gt;' =&gt; '&lt;%', '%&gt;'</span>
       <span class="ruby-comment cmt">#return /(.*?)(^[ \t]*)?#{@prefix}(=+|\#)?(.*?)-?#{@postfix}([ \t]*\r?\n)?/m</span>

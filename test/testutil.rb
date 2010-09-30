@@ -1,7 +1,6 @@
 ###
-### $Rev: 116 $
-### $Release: 2.6.2 $
-### copyright(c) 2006-2008 kuwata-lab.com all rights reserved.
+### $Release: 2.6.6 $
+### copyright(c) 2006-2010 kuwata-lab.com all rights reserved.
 ###
 
 require 'yaml'
@@ -10,16 +9,12 @@ require 'test/unit/testcase'
 
 
 
-def _ruby_ver_str  # :nodoc:
-  return /\d+\.\d+/.match(RUBY_VERSION)[0]
-end
-
 def ruby18?  # :nodoc:
-  _ruby_ver_str() == "1.8"
+  RUBY_VERSION =~ /\A1.8/
 end
 
 def ruby19?  # :nodoc:
-  _ruby_ver_str() > "1.8"
+  RUBY_VERSION =~ /\A1.9/
 end
 
 
