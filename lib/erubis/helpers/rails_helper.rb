@@ -86,10 +86,11 @@ module Erubis
 
       module TemplateConverter
         ## covert eRuby string into ruby code
-        def _convert_template(template)    # :nodoc:
+        def _convert_template(template, format='text.html')    # :nodoc:
           #src = ::Erubis::Eruby.new(template).src
           klass      = ::Erubis::Helpers::RailsHelper.engine_class
           properties = ::Erubis::Helpers::RailsHelper.init_properties
+          properties[:escape] = format !~ /\.html/ # only escape HTML templates
           show_src   = ::Erubis::Helpers::RailsHelper.show_src
           show_src = ENV['RAILS_ENV'] == 'development' if show_src.nil?
           ## preprocessing
@@ -152,7 +153,7 @@ if ActionPack::VERSION::MAJOR >= 2             ### Rails 2.X
           include ::Erubis::PreprocessingHelper
           def compile(template)
             #src = ::ERB.new("<% __in_erb_template=true %>#{template.source}", nil, erb_trim_mode, '@output_buffer').src
-            return _convert_template("<% __in_erb_template=true %>#{template.source}")
+            return _convert_template("<% __in_erb_template=true %>#{template.source}", template.format)
           end
         end
       end
