@@ -90,7 +90,7 @@ module Erubis
           #src = ::Erubis::Eruby.new(template).src
           klass      = ::Erubis::Helpers::RailsHelper.engine_class
           properties = ::Erubis::Helpers::RailsHelper.init_properties
-          properties[:escape] = format !~ /\.html/ # only escape HTML templates
+          properties[:escape] = format !~ /\bhtml\b/i # only escape HTML templates (false value winds up meaning escape=true)
           show_src   = ::Erubis::Helpers::RailsHelper.show_src
           show_src = ENV['RAILS_ENV'] == 'development' if show_src.nil?
           ## preprocessing
