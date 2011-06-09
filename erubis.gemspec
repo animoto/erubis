@@ -13,7 +13,7 @@ spec = Gem::Specification.new do |s|
   s.name        = "erubis"
   s.author      = "makoto kuwata"
   s.email       = "kwa(at)kuwata-lab.com"
-  s.version     = "2.6.2"
+  s.version     = "2.6.6"
   s.platform    = Gem::Platform::RUBY
   s.homepage    = "http://www.kuwata-lab.com/erubis/"
   s.summary     = "a fast and extensible eRuby implementation which supports multi-language"
@@ -64,3 +64,5 @@ if $0 == __FILE__
   Gem::manage_gems
   Gem::Builder.new(spec).build
 end
+
+spec
